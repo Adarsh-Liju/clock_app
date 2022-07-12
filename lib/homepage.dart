@@ -11,7 +11,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        alignment: Alignment.center ,
+        alignment: Alignment.center,
         color: Color(0XFF2D2F41),
         child: ClockView(),
       ),
