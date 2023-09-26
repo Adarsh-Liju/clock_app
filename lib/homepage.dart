@@ -11,31 +11,31 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     var now = DateTime.now();
-    var formattedTime = DateFormat('HH:mm').format(now);
+    var formattedTime = DateFormat('h:mm a').format(now);
     var formattedDate = DateFormat('EEE, d MMM').format(now);
 
     return Scaffold(
-      backgroundColor: Color(0XFF2D2F41),
+      backgroundColor: const Color(0XFF2D2F41),
       body: Center(
         child: Row(
           children: <Widget>[
             Container(
-              padding: EdgeInsets.all(32),
+              padding: const EdgeInsets.all(32),
               alignment: Alignment.center,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text(
+                  const Text(
                     'Clock',
                     style: TextStyle(color: Colors.white, fontSize: 24),
                   ),
                   Text(
                     formattedTime,
-                    style: TextStyle(color: Colors.white, fontSize: 64),
+                    style: const TextStyle(color: Colors.white, fontSize: 64),
                   ),
                   Text(
                     formattedDate,
-                    style: TextStyle(color: Colors.white, fontSize: 20),
+                    style: const TextStyle(color: Colors.white, fontSize: 20),
                   ),
                   ClockView(),
                 ],

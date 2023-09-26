@@ -10,7 +10,7 @@ class ClockView extends StatefulWidget {
 class _ClockViewState extends State<ClockView> {
   @override
   void initState() {
-    Timer.periodic(Duration(seconds: 1), (timer) {
+    Timer.periodic(const Duration(seconds: 1), (timer) {
       setState(() {});
     });
     super.initState();
@@ -18,7 +18,7 @@ class _ClockViewState extends State<ClockView> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: 300,
       height: 300,
       child: Transform.rotate(
@@ -41,14 +41,14 @@ class ClockPainter extends CustomPainter {
     var center = Offset(centerX, centerY);
     var radius = min(centerX, centerY);
 
-    var fillBrush = Paint()..color = Color(0xFF444974);
+    var fillBrush = Paint()..color = const Color(0xFF444974);
 
     var outlineBrush = Paint()
-      ..color = Color(0xFFEAECFF)
+      ..color = const Color(0xFFEAECFF)
       ..style = PaintingStyle.stroke
       ..strokeWidth = 16;
 
-    var centerFillBrush = Paint()..color = Color(0xFFEAECFF);
+    var centerFillBrush = Paint()..color = const Color(0xFFEAECFF);
 
     var secHandBrush = Paint()
       ..color = Colors.orange
@@ -57,21 +57,21 @@ class ClockPainter extends CustomPainter {
       ..strokeWidth = 16;
 
     var minHandBrush = Paint()
-      ..shader = RadialGradient(colors: [Color(0XFF748EF6), Color(0XFF77DDFF)])
+      ..shader = const RadialGradient(colors: [Color(0XFF748EF6), Color(0XFF77DDFF)])
           .createShader(Rect.fromCircle(center: center, radius: radius))
       ..style = PaintingStyle.stroke
       ..strokeCap = StrokeCap.round
       ..strokeWidth = 16;
 
     var hourHandBrush = Paint()
-      ..shader = RadialGradient(colors: [Color(0XFFEA74AB), Color(0XFFC279FB)])
+      ..shader = const RadialGradient(colors: [Color(0XFFEA74AB), Color(0XFFC279FB)])
           .createShader(Rect.fromCircle(center: center, radius: radius))
       ..style = PaintingStyle.stroke
       ..strokeCap = StrokeCap.round
       ..strokeWidth = 16;
 
     var dashBrush = Paint()
-      ..color = Color(0xFFEAECFF)
+      ..color = const Color(0xFFEAECFF)
       ..style = PaintingStyle.stroke
       ..strokeCap = StrokeCap.round
       ..strokeWidth = 1;
